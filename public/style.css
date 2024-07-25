@@ -1,0 +1,11 @@
+body{
+    font-family: sans-serif;
+}
+.clickable-name{
+    font: inherit;
+    cursor: pointer;
+    font-size: .9em;
+}
+.clickable-name:hover{
+    color: blue;
+}
