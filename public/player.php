@@ -1,4 +1,4 @@
-<?php require "../laytout/header.php"; ?>
+<?php require "../layout/header.php"; ?>
 <body>
     <?php
     $filename= $_GET['filename'];
