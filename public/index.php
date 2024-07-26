@@ -1,21 +1,19 @@
 <?php
+require '../vendor/autoload.php';
+use App\Navigation;
+use App\LoaderHandler;
+
 $folder= "C:/output/";
 ?>
 <?php require '../layout/header.php'?>
     <?php
     if(!empty($_GET['filename'])){
         $mp3file= $_GET['filename'];
-
-        $header_string= "<?php" . PHP_EOL . "header('Content-Type: audio/mpeg');" . PHP_EOL . "readfile('" . $folder . $mp3file . "');" . PHP_EOL;
-        $phploader_path= "phploader/phploader.php";
-        file_put_contents($phploader_path, $header_string);
-        echo "<script>window.location.href='player.php?filename=" . $mp3file . "'</script>";
-        
+        LoaderHandler::generate_loader_contents($folder, $mp3file, "phploader/phploader.php");
+        Navigation::go_to_page('player.php', ['filename'=> $mp3file]);
     } else {
         $mp3file= null;
     }
-
-    $music_folder= "C:/output";
     ?>
 
     <form action="" type="get" id="player-form">
@@ -33,19 +31,6 @@ $folder= "C:/output/";
         <?php endif?>
     <?php endforeach?>
     </div>
-    <script defer>
-        var the_from= document.querySelector("#player-form");
-        var all_clickable_songs= document.querySelectorAll(".clickable-name");
-        var the_input= document.querySelector("input#filename");
-        all_clickable_songs.forEach(el=>{
-            el.addEventListener('click', event=> {
-                event.preventDefault();
-                the_input.value= event.target.getAttribute('theattr');
-                the_from.submit();
-                // console.log(event.target.getAttribute('theattr'));
-                // console.log(event);
-            });
-        });
-        
+    <script defer src="scripts/generate_list_and_submit_form.js">
     </script>
 <?php require '../layout/footer.php'?>
