@@ -4,7 +4,6 @@ namespace App;
 class Navigation {
 
     public static function go_to_page(string $href, ?array $params= []){
-        // echo "<script>window.location.href='player.php?filename=" . $mp3file . "'</script>";
         $new_location_script= "<script>window.location.href='" . $href;
         if(!empty($params)){
             $new_location_script .= "?";
@@ -19,5 +18,5 @@ class Navigation {
         $new_location_script .= "'</script>";
         echo $new_location_script;
     }
-    
+
 }
