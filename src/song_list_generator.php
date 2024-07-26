@@ -9,6 +9,9 @@
                     <div class="name-container">
                         <?= $file->getFilename() ?>
                     </div>
+                    <div class="play_button">
+                        <div class="roundtriangle"></div>
+                    </div>
                 </div>
             </div>
         <?php endif?>
