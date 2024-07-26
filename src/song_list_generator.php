@@ -6,7 +6,9 @@
             <?php $song_number++ ?>
             <div class="song-element">
                 <div class="clickable-name" theattr="<?= $file->getFilename() ?>">
-                    <?= $file->getFilename() ?>
+                    <div class="name-container">
+                        <?= $file->getFilename() ?>
+                    </div>
                 </div>
             </div>
         <?php endif?>

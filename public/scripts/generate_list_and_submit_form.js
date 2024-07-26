@@ -13,6 +13,7 @@ var the_input= document.querySelector("input#filename");
 all_clickable_songs.forEach(el=>{
 
     el.addEventListener('click', event=> {
+        // console.log(event.target);
 
         event.preventDefault();
 
