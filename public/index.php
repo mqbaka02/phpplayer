@@ -20,17 +20,10 @@ $folder= "C:/output/";
         <input type="hidden" value="<?=$mp3file?>" name="filename" id="filename">
     </form>
 
-    <div class="list-container">
-    <?php foreach (new DirectoryIterator($folder) as $file) :?>
-        <?php if (!$file->isDot()&&!$file->isDir()) : ?>
-            <div class="song-element">
-                <div class="clickable-name" theattr="<?= $file->getFilename() ?>">
-                    <?= $file->getFilename() ?>
-                </div>
-            </div>
-        <?php endif?>
-    <?php endforeach?>
-    </div>
-    <script defer src="scripts/generate_list_and_submit_form.js">
-    </script>
+
+    <!-- variables
+     $folder could be an array for all I care
+     ...
+      -->
+    <?php require '../src/song_list_generator.php'; ?>
 <?php require '../layout/footer.php'?>

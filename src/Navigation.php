@@ -9,7 +9,7 @@ class Navigation {
             $new_location_script .= "?";
             $keys_list= array_keys($params);
             for($i= 0; $i< count($params); $i++){
-                $new_location_script .= $keys_list[$i] . "=" . $params[$keys_list[$i]];
+                $new_location_script .= $keys_list[$i] . "=" . str_replace("'", "\'", $params[$keys_list[$i]]);
                 if($i!== (count($params) - 1)){
                     $new_location_script .= "&";
                 }
