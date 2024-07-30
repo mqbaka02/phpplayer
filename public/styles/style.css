@@ -176,3 +176,26 @@ triangle code
   background: var(--dark-color);
   border-radius: 2px;
 }
+
+.volume{
+  display: flex;
+  flex-direction: row;
+  gap: .5em;
+}
+
+.volume-value{
+  width: 100px;
+  height: 100%;
+  background: #88f;
+  position: relative;
+  --volume: 20%;
+}
+
+.volume-value::after{
+  content: '';
+  position: absolute;
+  left: 0;
+  height: 100%;
+  width: var(--volume);
+  background: #448;
+}

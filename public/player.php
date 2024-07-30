@@ -19,6 +19,7 @@
             <button id="pp">Play</button>
             <div class="volume">
                 <button id="vm">-</button>
+                <div class="volume-value"></div>
                 <button id="vp">+</button>
             </div>
         </div>
