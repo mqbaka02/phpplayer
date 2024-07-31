@@ -5,7 +5,7 @@ window.onload= ()=> {
     var vol_slider= document.querySelector('.volume .volume-value');
 
     if(getCookieFromKey("audioVolume") != null){
-        console.log(getCookieFromKey("audioVolume"));
+        // console.log(getCookieFromKey("audioVolume"));
         setVolume(getCookieFromKey("audioVolume"));
     }
 
@@ -19,6 +19,15 @@ window.onload= ()=> {
     set_width(vol_slider, the_player.volume);
 
     vol_slider.addEventListener('click', handleVolume);
+    vol_slider.addEventListener('mousedown', (e)=> {
+        e.preventDefault();
+        vol_slider.addEventListener('mousemove', slideMouse);
+        vol_slider.addEventListener('mouseup', (event)=>{
+            event.preventDefault();
+            vol_slider.removeEventListener('mousemove', slideMouse);
+            // handleVolume(event);
+        });
+    });
 
     the_player.addEventListener('volumechange', (e)=>{
         set_width(vol_slider, the_player.volume);
@@ -91,3 +100,16 @@ function setVolume(somevalue){
     set_width(vol_slider, parseFloat(somevalue));
     audio_player.volume= parseFloat(somevalue);
 }
+
+function getRelativePos(someEl, event){
+    return {
+        x: event.clientX - someEl.getBoundingClientRect().x,
+        y: event.clientY - someEl.getBoundingClientRect().y
+    };
+}
+
+const slideMouse= (event)=>{
+    // console.log(getRelativePos(vol_slider, event));
+    set_width(event.target, (getRelativePos(event.target, event).x)/100);
+    handleVolume(event);
+};
