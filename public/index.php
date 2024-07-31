@@ -1,3 +1,4 @@
+<?php $styles=["style.css"] ?>
 <?php
 require '../vendor/autoload.php';
 use App\Navigation;

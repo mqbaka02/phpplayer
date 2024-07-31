@@ -1,6 +1,8 @@
+<?php $styles=["style.css"] ?>
 <?php require "../layout/header.php"; ?>
     <form action="index.php" type="get" id="player-form">
-        <input type="hidden" value="<?=$mp3file?>" name="filename" id="filename">
+        <input type="hidden" value="" name="filename" id="filename">
+        <!-- <input type="hidden" value="<?=$mp3file?>" name="filename" id="filename"> -->
     </form>
     <?php
     $filename= $_GET['filename'];

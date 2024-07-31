@@ -14,6 +14,7 @@ body{
     --all-hover-color: #88f;
     --base-color: #777;
     --dark-color: #448;
+    --light-grey: #aaa;
 }
 .clickable-name{
     font: inherit;
