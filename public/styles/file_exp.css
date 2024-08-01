@@ -11,7 +11,14 @@
 .dir-div{
     height: 130px;
     width: 130px;
+    position: relative;
+    top: 0;
+    transition: .4s;
     /* border: 1px solid #555; */
+}
+
+.dir-div:hover{
+    top: -15px;
 }
 
 .dir-div a{
@@ -28,7 +35,7 @@
 }
 
 .dir-div a:hover{
-    background: var(--light-grey);
+    background: var(--light-blue);
 }
 
 .dir-div a .folder-link{

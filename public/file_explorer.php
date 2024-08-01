@@ -18,13 +18,14 @@ if(isset($_GET['folder'])){
 $drives= [];
 $fso = new COM('Scripting.FileSystemObject');
 foreach ($fso->Drives as $drive) {
-	$drives[]= $drive->Drive;
+	$drives[]= $drive->DriveLetter;
 }
 
 // exit();
 ?>
+
 <?php require "../layout/header.php"; ?>
-<h2><?=$starting_folder?></h2>
+<h2><?=$folder?></h2>
 <?php $dir_number= 0; ?>
 <div class="folder-container">
     <?php foreach (new DirectoryIterator($folder) as $file): ?>
