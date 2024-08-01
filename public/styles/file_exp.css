@@ -8,11 +8,20 @@
     gap: .5em;
 }
 
+body>*{
+    width: 70%;
+}
+
+.folder-container.drives{
+    justify-content: center;
+}
+
 .dir-div{
     height: 130px;
     width: 130px;
     position: relative;
     top: 0;
+    left: 0;
     transition: .4s;
     /* border: 1px solid #555; */
 }
@@ -30,8 +39,9 @@
     height: 100%;
     max-width: 100%;
     border-radius: 10px;
-    transition: .2s;
+    transition: .3s ease-out;
     padding: .1em;
+    font-size: .85em;
 }
 
 .dir-div a:hover{
@@ -49,4 +59,98 @@
 
 .dir-div svg{
     width: 80%;
+    height: 100%;
+}
+
+.dir-div.drive svg{
+    width: 70%;
+}
+
+.folder-explorer{
+    width: 70%;
+    margin: auto;
+    display: flex;
+    flex-direction: row;
+    gap: 1em;
+    flex-grow: 1;
+    overflow: hidden;
+    /* position: relative; */
+}
+
+.folder-explorer>div{
+    background-color: var(--xlight-grey);
+}
+
+.folder-explorer .folder-container.drives{
+    flex-direction: column;
+    position: relative;
+    width: 100%;
+    flex-direction: row;
+    justify-content: flex-end;
+}
+
+.separator{
+    background-color: var(--base-color);
+    width: 0px;
+    height: 80%;
+    height: 100%;
+    margin: auto 0;
+}
+
+.folder-explorer .folder-container.drives .dir-div:hover{
+    top: 0;
+    left: -15px;
+}
+.inner{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 10px;
+    overflow-y: scroll;
+    position: relative;
+    --scrb-top: 0;
+    --scrb-hgt: 100px;
+}
+
+.folder-explorer .inner:first-child{
+    flex: 5;
+}
+
+.folder-explorer .inner:last-child{
+    flex: 1;
+}
+
+.title{
+    background-color: var(--xlight-grey);
+    border-radius: 10px;
+    margin: auto;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: var(--base-color);
+    padding: 2em 0;
+}
+
+.inner::-webkit-scrollbar {
+    display: none;
+}
+
+.inner {
+    -ms-overflow-style: none;  /* IE and Edge */
+    scrollbar-width: none;     /* Firefox */
+}
+
+.inner .scrollbar{
+    position: absolute;
+    width: 10px;
+    background-color: brown;
+    top: var(--scrb-top);
+    height: var(--scrb-hgt);
+    right: 0;
+    opacity: 0;
+    transition: .3s;
+}
+
+.inner:hover .scrollbar:not(.invisible){
+    opacity: .7;
 }

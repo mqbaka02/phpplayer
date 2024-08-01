@@ -15,6 +15,7 @@ body{
     --base-color: #777;
     --dark-color: #448;
     --light-grey: #aaa;
+    --xlight-grey: #eee;
     --light-blue: #A6CAF0;
 }
 .clickable-name{
