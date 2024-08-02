@@ -1,6 +1,7 @@
 <?php
+require '../vendor/autoload.php';
+use App\Utils;
 $folder_string= implode("/", $folder);
-// var_dump($folder);
 ?>
 <div class="title">
     <h2><?= $folder_string ?></h2>
@@ -15,19 +16,8 @@ $folder_string= implode("/", $folder);
                     <?php $dir_number++ ?>
                     <div class="dir-div">
                         <?php
-                            $file_path= $folder;
-                            if($file->getFileName()=== ".."){
-                                array_pop($file_path);
-                            } else {
-                                $file_path[]= $file->getFileName();
-                            }
-
-                            $folder_url_params= "folder[]=" . $file_path[0];
-                            if(count($file_path) > 1){
-                                for($i= 1; $i< count($file_path); $i++){
-                                    $folder_url_params .= "&folder[]=" . urlencode($file_path[$i]);
-                                }
-                            }
+                            $file_path= Utils::generate_file_path_from_array($folder, $file);
+                            $folder_url_params= Utils::generate_URL_params($file_path);
                         ?>
                         <a href=<?= "file_explorer.php?" . $folder_url_params ?>>
                             <?php require "images/folder.svg" ?>

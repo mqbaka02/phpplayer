@@ -1,7 +1,6 @@
 <?php $styles=["style.css", "file_exp.css"] ?>
 <?php
-require '../vendor/autoload.php';
-use App\Navigation;
+// exit();
 
 if(isset($_GET['folder'])){
     $folder= $_GET['folder'];
@@ -19,13 +18,13 @@ foreach ($fso->Drives as $drive) {
 // var_dump($drives);
 ?>
 
-<?php require "../layout/header.php"; ?>
+<?php require "../layout/header.php";?>
 <?php if(!isset($_GET['folder'])): ?>
     <?php require "drives-list.php"; ?>
 <?php endif ?>
 
 <?php if(isset($_GET['folder'])): ?>
-    <?php require "folders-list.php"; ?>
+    <?php include "folders-list.php"; ?>
 <?php endif ?>
 
 <?php require "../layout/footer.php"; ?>
