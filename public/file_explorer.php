@@ -3,14 +3,9 @@
 require '../vendor/autoload.php';
 use App\Navigation;
 
-// $starting_folder= "C:/";
-
 if(isset($_GET['folder'])){
-    $folder= urldecode($_GET['folder']);
-} 
-// else {
-//     $folder= $starting_folder;
-// }
+    $folder= $_GET['folder'];
+}
 
 // $comms= explode(" ", exec("fsutil fsinfo drives"));
 // $drives= array_shift($comms);

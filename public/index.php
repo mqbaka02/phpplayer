@@ -21,7 +21,6 @@ $folder= "C:/output/";
         <input type="hidden" value="<?=$mp3file?>" name="filename" id="filename">
     </form>
 
-
     <!-- variables
      $folder could be an array for all I care
      ...
