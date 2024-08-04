@@ -40,7 +40,8 @@ $folder_string= implode("/", $folder);
         <div class="separator" aria-hidden="true" role="presentation"></div>
     </div>
     <div class="inner">
+        <div class="scrollbar"></div>
         <?php require "drives-list.php" ?>
     </div>
 </div>
-<script src="scripts/scrollbar.js"></script>
+<script src="scripts/scrollbars.js"></script>

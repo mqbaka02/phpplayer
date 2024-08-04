@@ -10,6 +10,7 @@ if(isset($_GET['folder'])){
 // $drives= array_shift($comms);
 // var_dump($drives);
 // var_dump(explode(" ", exec("fsutil fsinfo drives")));
+
 $drives= [];
 $fso = new COM('Scripting.FileSystemObject');
 foreach ($fso->Drives as $drive) {

@@ -18,6 +18,12 @@ body{
     --xlight-grey: #eee;
     --light-blue: #A6CAF0;
 }
+
+body>*{
+  width: 100%;
+  max-width: 1050px;
+}
+
 .clickable-name{
     font: inherit;
     cursor: pointer;
