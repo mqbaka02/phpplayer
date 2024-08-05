@@ -10,6 +10,7 @@ class LoaderHandler {
         $header_string .= PHP_EOL;
         $header_string .= "readfile(\"";
         $header_string .= $folder;
+        $header_string .= '/';
         $header_string .= $mp3file;
         $header_string .= "\");";
         $header_string .= PHP_EOL;

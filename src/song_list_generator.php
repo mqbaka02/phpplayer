@@ -1,4 +1,9 @@
 
+
+<form action="" type="get" id="player-form">
+    <input type="hidden" value="<?=$mp3file?>" name="filename" id="filename">
+</form>
+
 <div class="list-container">
     <?php $song_number= 0; ?>
     <?php foreach (new DirectoryIterator($folder) as $file) :?>
@@ -6,6 +11,7 @@
             <?php $song_number++ ?>
             <div class="song-element">
                 <div class="clickable-name" theattr="<?= $file->getFilename() ?>">
+                    <?php var_dump($file->getFileName())?>
                     <div class="name-container">
                         <?= $file->getFilename() ?>
                     </div>

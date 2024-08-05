@@ -130,7 +130,7 @@ body{
     justify-content: center;
     align-items: center;
     color: var(--base-color);
-    padding: 2em 0;
+    padding: 2em 4em;
 }
 
 .file-exp{
@@ -157,7 +157,7 @@ body{
     padding: .6em 1.2em;
     font-size: .8em;
     cursor: pointer;
-    box-shadow: inset -4px -7px 12px 2px #0000001f;
+    box-shadow: inset -4px -7px 12px 2px #00000014;
     border: 1px solid var(--light-grey);
     font-weight: 600;
     display: flex;
@@ -170,7 +170,7 @@ body{
     font-size: .9em;
 }
 .folder-button:hover{
-    box-shadow: inset -4px -7px 12px 2px #00000011;
+    box-shadow: inset -4px -7px 12px 2px #00000006;
 }
 
 .inner::-webkit-scrollbar {

@@ -1,9 +1,8 @@
 <?php $styles=["style.css"] ?>
 <?php require "../layout/header.php"; ?>
-    <form action="index.php" type="get" id="player-form">
+    <!-- <form action="player.php" type="get" id="player-form">
         <input type="hidden" value="" name="filename" id="filename">
-        <!-- <input type="hidden" value="<?=$mp3file?>" name="filename" id="filename"> -->
-    </form>
+    </form> -->
     <?php
     $filename= $_GET['filename'];
     ?>
@@ -27,9 +26,8 @@
         </div>
     </div>
 
-    <?php $folder= "C:/output/" ?>
+    <?php $folder= json_decode($_COOKIE['added_folders'])[0] ?>
     <?php require '../src/song_list_generator.php'; ?>
-
 
     <script src="scripts/player.js">
     </script>
