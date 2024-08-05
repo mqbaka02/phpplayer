@@ -22,6 +22,7 @@ body{
 body>*{
   width: 100%;
   max-width: 1050px;
+  max-width: calc(100vw - 30em);
 }
 
 .clickable-name{

@@ -3,8 +3,16 @@ require '../vendor/autoload.php';
 use App\Utils;
 $folder_string= implode("/", $folder);
 ?>
-<div class="title">
+<div class="title file-exp">
     <h2><?= $folder_string ?></h2>
+    <div class="folder-buttons">
+        <?php foreach($folder as $key=>$single_folder): ?>
+            <?php $its_link= Utils::generate_URL_params(array_slice($folder, 0, $key + 1)) ?>
+            <a href="<?= 'file_explorer.php?' . $its_link ?>" class="folder-button">
+                <?= $single_folder ?>
+            </a>
+        <?php endforeach ?>
+    </div>
 </div>
 <?php $dir_number= 0; ?>
 <div class="folder-explorer">

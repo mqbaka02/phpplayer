@@ -111,6 +111,7 @@ body{
     position: relative;
     --scrb-top: 0;
     --scrb-hgt: 100px;
+    padding: 1em 2em;
 }
 
 .folder-explorer .inner:first-child{
@@ -130,6 +131,46 @@ body{
     align-items: center;
     color: var(--base-color);
     padding: 2em 0;
+}
+
+.file-exp{
+    display: flex;
+    flex-direction: column;
+    gap: 1em;
+}
+
+.folder-buttons{
+    display: flex;
+    flex-direction: row;
+    gap: .4em;
+}
+
+.folder-button{
+    background-color: #565656;
+    color: transparent;
+    text-shadow: 0px 2px 3px rgba(255,255,255,0.5);
+    -webkit-background-clip: text;
+       -moz-background-clip: text;
+            background-clip: text;
+
+    border-radius: 5px;
+    padding: .6em 1.2em;
+    font-size: .8em;
+    cursor: pointer;
+    box-shadow: inset -4px -7px 12px 2px #0000001f;
+    border: 1px solid var(--light-grey);
+    font-weight: 600;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: .1s;
+}
+.folder-button:last-child{
+    font-weight: 800;
+    font-size: .9em;
+}
+.folder-button:hover{
+    box-shadow: inset -4px -7px 12px 2px #00000011;
 }
 
 .inner::-webkit-scrollbar {

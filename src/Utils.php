@@ -22,4 +22,8 @@ class Utils {
         }
         return $folder_url_params;
     }
+
+    public static function generate_path_from_array_and_key(array $folders, int $key): string {
+        return (implode('/', array_slice($folders, 0, $key + 1)));
+    }
 }
